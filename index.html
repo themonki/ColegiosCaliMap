@@ -1,0 +1,79 @@
+<html>
+<head>
+  <title>Colegios Cali 2.0</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+	<link rel="icon" type="image/png" href="favicon.ico"/>
+	<link rel="manifest" href="/manifest.json">
+	<meta name="theme-color" content="#333333">
+
+	<!-- https://stackoverflow.com/questions/19778620/provide-an-image-for-whatsapp-link-sharing?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa -->
+	<meta name="description" content="Instituciones Educativas Oficiales y Establecimientos Educativos Privados contratados con Ampliación de Cobertura">
+	<meta property="og:title" content="Colegios Cali" />
+	<meta property="og:url" content="https://establecimientoseducativoscali.000webhostapp.com/map" />
+	<meta property="og:description" content="Aplicación para Consulta de Colegios en Cali">
+	<meta property="og:image" content="//establecimientoseducativoscali.000webhostapp.com/map/apple-touch-icon.png">
+	<meta property="og:type" content="school" />
+	<meta property="og:locale" content="es_CO" />
+  
+  <link rel="stylesheet" href="ajax/libs/leaflet/1.5.1/leaflet.css" type="text/css"/>
+  <link rel="stylesheet" href="ajax/libs/leaflet-fusesearch/src/leaflet.fusesearch.css" type="text/css"/>
+  <link rel="stylesheet" href="css/style.css" type="text/css"/>
+  
+  <!-- Para leer datos privados como la clave API de Google Maps-->
+  <script type="text/javascript" src="config.js"></script>
+  <script type="text/javascript">
+  	var head = document.getElementsByTagName('head')[0];
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = "https://maps.google.com/maps/api/js?key="+GOOGLE_MAPS_API_KEY+"&amp;libraries=places,geometry";
+		head.appendChild(script);
+  </script>
+  <script type="text/javascript" src="ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="ajax/libs/leaflet/1.5.1/leaflet.js"></script>
+  <script type="text/javascript" src="ajax/libs/tabletop.js/1.5.3/tabletop.min.js"></script>
+  <script type="text/javascript" src="js/lib/handlebars.js"></script>
+  <script type="text/javascript" src="ajax/libs/omnivore/0.2.0/leaflet-omnivore.min.js"></script>
+  <script type="text/javascript" src="ajax/libs/Fuse/3.4.5/fuse.js"></script>
+  <script type="text/javascript" src="ajax/libs/leaflet-fusesearch/src/leaflet.fusesearch.js"></script>
+  <script type="text/javascript" src="ajax/libs/Leaflet.GoogleMutant/0.8.0/Leaflet.GoogleMutant.js"></script>
+</head>
+
+<body>
+<div id="map" class="map"></div>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		var elements = $("div").filter(function() {
+		  return $(this).css("z-index") == "9999999";
+		});
+		elements.removeAttr("style");
+		//elements.css("display", "none");
+		elements.css("position", "fixed");
+		elements.css("z-index", "99999");
+		elements.css("bottom", "0px");
+		elements.css("left", "50%");
+		elements.css("margin-left", "-113.5px");
+	});
+	// https://stackoverflow.com/questions/34369951/how-to-get-add-to-home-screen-pop-up-on-site-open-in-mobile-browser?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+	// https://developers.google.com/web/fundamentals/app-install-banners/
+	// https://blog.betapage.co/how-to-add-add-to-homescreen-popup-in-web-app-99d5237fabff
+	// https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps#add-to-homescreen
+	if ('serviceWorker' in navigator) {
+		console.log("Will the service worker register?");
+		navigator.serviceWorker.register('service-worker.js')
+			.then(function(reg){
+				console.log("Yes, it did.");
+			}).catch(function(err) {
+				console.log("No it didn't. This happened:", err)
+			});
+	}
+</script>
+</body>
+
+</html>

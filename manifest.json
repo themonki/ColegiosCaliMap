@@ -1,0 +1,46 @@
+{
+  "short_name": "Colegios Cali",
+  "name": "I.E.O. y Ampliación de Cobertura Cali",
+  "theme_color": "#333333",
+  "background_color": "#FFFFFF",
+  "scope": ".",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "launcher-icon/res/mipmap-xxxhdpi/launcher-icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "launcher-icon/res/mipmap-xhdpi/launcher-icon.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "launcher-icon/res/mipmap-mdpi/launcher-icon.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "launcher-icon/res/mipmap-hdpi/launcher-icon.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "launcher-icon/res/mipmap-xhdpi/launcher-icon.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "launcher-icon/res/mipmap-xxhdpi/launcher-icon.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "launcher-icon/res/mipmap-xxxhdpi/launcher-icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/index.html?utm_source=web_app_manifest"
+}
