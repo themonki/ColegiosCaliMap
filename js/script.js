@@ -1,3 +1,4 @@
+//CONFIGURACION
 //Key to google spreadsheet
 var code = "1pdYkFsQcBX_nnczQfO6EyDWGZKdriZgm7uaCCmvzfus"
 //Los datos deben contener una columna que se llame coordenadas (o como lo defina)
@@ -45,6 +46,7 @@ var templatePopUp = "<div class='view' style='font-size: 10px;font-family: sans-
 var idescWMSUri = "http://ws-idesc.cali.gov.co:8081/geoserver/wms?";
 var idescAttribution = "&copy; <a href='http://www.cali.gov.co/planeacion/publicaciones/3560/idesc/'>Infraestructura de Datos Espaciales de Santiago de Cali - IDESC</a>";
 
+		//idesc:mc_comunas,pot_2014:bcs_centros_poblados,idesc:mc_corregimientos,idesc:mc_barrios,idesc:mc_nomenclatura_ejes_viales
 var comunas = createBaseMapWMS(idescWMSUri,"idesc:mc_comunas",idescAttribution);
 var poblados = createBaseMapWMS(idescWMSUri,"pot_2014:bcs_centros_poblados",idescAttribution);
 var corregimientos = createBaseMapWMS(idescWMSUri,"idesc:mc_corregimientos",idescAttribution);
@@ -62,7 +64,7 @@ var overlayMaps = {
 		"Nomenclatura Ejes Viales": nomenclatura
 };
 
-		//idesc:mc_comunas,pot_2014:bcs_centros_poblados,idesc:mc_corregimientos,idesc:mc_barrios,idesc:mc_nomenclatura_ejes_viales
+
 var idescMap = createBaseMapWMS(idescWMSUri,"Mapa base",idescAttribution);
 
 //define mapas base adicionales
@@ -87,6 +89,9 @@ var filterVar = [
 	{ column: "grados", label: "Grado"}
 ];
 
+
+//FIN DE CONFIGURACION 
+/////////////////////////////////////////////////////////////////
 var defaultIconMarker = "icons/small_red.png";
 
 
